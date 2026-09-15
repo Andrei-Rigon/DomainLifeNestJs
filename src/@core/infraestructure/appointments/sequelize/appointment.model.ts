@@ -31,41 +31,41 @@ export class Appointment extends Model<Appointment> {
   @PrimaryKey
   @AutoIncrement
   @Column(DataType.BIGINT)
-  id: number;
+  declare id: number;
 
   @Column({
     type: DataType.STRING(255),
     allowNull: false,
   })
-  titulo: string;
+  titulo!: string;
 
   @Column({
     type: DataType.STRING(255),
     allowNull: true,
   })
-  descricao: string | null;
+  descricao!: string | null;
 
   @Column({
     type: DataType.DATEONLY,
     allowNull: false,
   })
-  data_evento: string;
+  data_evento!: string;
 
   @Column({
     type: DataType.TIME,
     allowNull: true,
   })
-  hora_evento: string | null;
+  hora_evento!: string | null;
 
   @Column({
     type: DataType.DATE,
     allowNull: true,
   })
-  data_hora_evento: Date | null;
+  data_hora_evento!: Date | null;
 
   @Column({
     type: DataType.STRING(255),
     allowNull: true,
   })
-  localizacao: string | null;
+  localizacao!: string | null;
 }
