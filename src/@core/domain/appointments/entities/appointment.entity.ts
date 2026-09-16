@@ -1,1 +1,1 @@
-export class Appointment {}
+export * from '../../../infraestructure/appointments/sequelize/appointment.model';

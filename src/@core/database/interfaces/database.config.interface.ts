@@ -1,3 +1,4 @@
+// Aparentemente não é usado em lugar nenhum
 export interface IDatabaseConfigAttributes {
   username?: string;
   password?: string;
