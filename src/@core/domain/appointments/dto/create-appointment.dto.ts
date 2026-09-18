@@ -3,14 +3,14 @@ import { IsDateString, IsNotEmpty, IsOptional, IsString, Matches } from 'class-v
 export class CreateAppointmentDto {
   @IsString()
   @IsNotEmpty()
-  titulo: string;
+  titulo!: string;
 
   @IsOptional()
   @IsString()
   descricao?: string;
 
   @IsDateString()
-  data_evento: string;
+  data_evento!: string;
 
   @IsOptional()
   @Matches(/^\d{2}:\d{2}(:\d{2})?$/, { message: 'hora_evento deve estar no formato HH:mm' })

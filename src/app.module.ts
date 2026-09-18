@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { AppointmentsModule } from './@core/domain/appointments/module/appointments.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { NotesModule } from './@core/domain/notes/notes.module';
+import { NotesModule } from 'src/@core/domain/notes/module/notes.module';
 
 @Module({
   imports: [

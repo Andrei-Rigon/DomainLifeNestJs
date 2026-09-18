@@ -1,26 +1,59 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { Op } from 'sequelize';
 import { CreateNoteDto } from '../dto/create-note.dto';
 import { UpdateNoteDto } from '../dto/update-note.dto';
+import type { NotesRepositoryInterface } from '../repositories/notes.repositories';
+
 
 @Injectable()
 export class NotesService {
+
+  constructor(
+    @Inject('NOTES_REPOSITORY')
+    private readonly notesRepository: NotesRepositoryInterface,
+  ) {}
+
   create(createNoteDto: CreateNoteDto) {
-    return 'This action adds a new note';
+    return this.notesRepository.create(createNoteDto);
   }
 
-  findAll() {
-    return `This action returns all notes`;
+  findAll(start?: string, end?: string) {
+    return this.notesRepository.findAll({
+      where:
+        start && end
+          ? {
+              data_evento: {
+                [Op.between]: [start, end],
+              },
+            }
+          : undefined,
+      order: [
+        ['created_at', 'ASC'],
+        ['created_at', 'ASC'],
+      ],
+    });
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} note`;
+    return this.notesRepository.findOne({
+      where: {
+        id
+      }})
   }
 
   update(id: number, updateNoteDto: UpdateNoteDto) {
-    return `This action updates a #${id} note`;
+    return this.notesRepository.update(updateNoteDto, {
+      where: {
+        id
+      }
+    })
   }
 
   remove(id: number) {
-    return `This action removes a #${id} note`;
+    return this.notesRepository.destroy({
+      where: {
+        id
+      }
+    })
   }
 }
