@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { AppointmentsModule } from './@core/domain/appointments/module/appointments.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { NotesModule } from './@core/domain/notes/notes.module';
 
 @Module({
   imports: [
@@ -25,7 +26,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         synchronize: true, // Não pode subir pra prod
       }),
     }),
-    AppointmentsModule],
+    AppointmentsModule,
+    NotesModule],
   controllers: [AppController],
   providers: [AppService],
 })
