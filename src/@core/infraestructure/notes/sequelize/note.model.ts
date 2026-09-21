@@ -26,7 +26,7 @@ export class Notes extends Model<Notes> {
   titulo!: string;
 
   @Column({
-    type: DataType.STRING(255),
+    type: DataType.TEXT,
     allowNull: true,
   })
   descricao!: string | null;
