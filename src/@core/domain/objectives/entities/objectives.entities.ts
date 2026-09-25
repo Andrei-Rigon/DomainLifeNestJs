@@ -1,0 +1,1 @@
+export * from '../../../infraestructure/objectives/sequelize/objectives.model';
