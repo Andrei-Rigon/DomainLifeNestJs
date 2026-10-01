@@ -1,0 +1,1 @@
+export * from '../../../infraestructure/objectives/sequelize/categories_objectives.model';

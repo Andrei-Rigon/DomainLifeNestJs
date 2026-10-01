@@ -10,12 +10,12 @@ import {
 } from 'sequelize-typescript';
 
 @Table({
-    tableName: 'objectives',
+    tableName: 'objectivesCategories',
     timestamps: true, // created_at / updated_at
     paranoid: true, // soft delete -> deleted_at
     underscored: true, // usa snake_case nas colunas (created_at, deleted_at, etc.)
 })
-export class Objectives extends Model<Objectives> {
+export class ObjectivesCategories extends Model<ObjectivesCategories> {
     @PrimaryKey
     @AutoIncrement
     @Column(DataType.BIGINT)    

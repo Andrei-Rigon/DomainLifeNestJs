@@ -6,6 +6,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { NotesModule } from 'src/@core/domain/notes/module/notes.module';
 import { ObjectivesModule } from './@core/domain/objectives/module/objectives.module';
+import { ObjectivesCategoriesModule } from './@core/domain/objectives_categories/module/objectives_categories.module';
 
 @Module({
   imports: [
@@ -29,7 +30,8 @@ import { ObjectivesModule } from './@core/domain/objectives/module/objectives.mo
     }),
     AppointmentsModule,
     NotesModule,
-    ObjectivesModule],
+    ObjectivesModule,
+    ObjectivesCategoriesModule],
   controllers: [AppController],
   providers: [AppService],
 })
