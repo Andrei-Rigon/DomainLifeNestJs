@@ -5,6 +5,9 @@ import { AppointmentsModule } from './@core/domain/appointments/module/appointme
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { NotesModule } from 'src/@core/domain/notes/module/notes.module';
+import { ObjectivesModule } from './@core/domain/objectives/module/objectives.module';
+import { ObjectivesCategoriesModule } from './@core/domain/objectives_categories/module/objectives_categories.module';
+import { CountsModule } from './@core/domain/counts/counts.module';
 
 @Module({
   imports: [
@@ -27,7 +30,10 @@ import { NotesModule } from 'src/@core/domain/notes/module/notes.module';
       }),
     }),
     AppointmentsModule,
-    NotesModule],
+    NotesModule,
+    ObjectivesModule,
+    ObjectivesCategoriesModule,
+    CountsModule],
   controllers: [AppController],
   providers: [AppService],
 })
