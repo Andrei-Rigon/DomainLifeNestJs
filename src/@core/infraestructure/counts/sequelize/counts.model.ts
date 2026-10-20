@@ -5,7 +5,10 @@ import {
   DataType,
   PrimaryKey,
   AutoIncrement,
+  ForeignKey,
+  BelongsTo
 } from 'sequelize-typescript';
+import { CategoriaConta } from './categoria_conta.model';
 
 @Table({
   tableName: 'counts',

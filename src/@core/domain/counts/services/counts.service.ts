@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateCountDto } from './dto/create-count.dto';
-import { UpdateCountDto } from './dto/update-count.dto';
+import { CreateCountDto } from '../dto/create-count.dto';
+import { UpdateCountDto } from '../dto/update-count.dto';
 
 @Injectable()
 export class CountsService {

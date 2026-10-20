@@ -5,3 +5,6 @@ nest new .
 
 ## Sequelize
 npm install sequelize sequelize-typescript pg pg-hstore
+
+# Como rodar o backend
+npm run start:dev
