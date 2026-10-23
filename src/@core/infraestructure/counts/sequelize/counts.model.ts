@@ -58,12 +58,6 @@ export class Counts extends Model<Counts> {
   })
   declare qtde_parceladas: number | null;
 
-  @Column({
-    type: DataType.INTEGER(),
-    allowNull: true,
-  })
-  declare id_categoriaCount: number | null;
-
   @ForeignKey(() => CategoriaConta)   
   @Column({ type: DataType.INTEGER, allowNull: true })
   declare id_categoria_conta: number | null;

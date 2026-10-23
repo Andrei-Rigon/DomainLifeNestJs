@@ -1,26 +1,45 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateCountDto } from '../dto/create-count.dto';
 import { UpdateCountDto } from '../dto/update-count.dto';
+import type { CountsRepositoryInterface } from '../repositories/counts.repository.interface';
 
 @Injectable()
 export class CountsService {
+
+  constructor(
+    @Inject('COUNT_REPOSITORY')
+    private readonly countRepository: CountsRepositoryInterface,
+  ){}
+
   create(createCountDto: CreateCountDto) {
-    return 'This action adds a new count';
+    return createCountDto;
   }
 
   findAll() {
-    return `This action returns all counts`;
+    return this.countRepository.findAll();      
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} count`;
+    return this.countRepository.findOne({
+      where: {
+        id
+      } 
+    })
   }
 
   update(id: number, updateCountDto: UpdateCountDto) {
-    return `This action updates a #${id} count`;
+    return this.countRepository.update(updateCountDto, {
+      where: {
+        id
+      }
+    })
   }
 
   remove(id: number) {
-    return `This action removes a #${id} count`;
+    return this.countRepository.destroy({
+      where: {
+        id
+      }
+    })
   }
 }
