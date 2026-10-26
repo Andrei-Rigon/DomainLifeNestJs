@@ -26,6 +26,7 @@ Também permite gerar parcelas das contas cadastradas.
 Mostra valores do mes, entradas e saidas e um filtro de data
 
 ### Pagamentos
+Permite cadastrar parcelas dos pagamentos anteriores, pra controle de caixa
 
 ### Recebimentos
 
